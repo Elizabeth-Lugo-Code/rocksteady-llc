@@ -50,6 +50,13 @@ nav{
   width:10px; height:10px; border-radius:50%; background:var(--cedar);
   display:inline-block;
 }
+.logo-img{
+  height:36px; width:auto; max-width:180px; object-fit:contain;
+  display:block;
+}
+footer .logo-img{
+  height:28px; filter:brightness(0) invert(1); opacity:0.9;
+}
 .navlinks{display:flex; align-items:center; gap:32px; list-style:none; font-size:0.95rem; font-weight:500;}
 .navlinks a{text-decoration:none; opacity:0.75; transition:opacity 0.2s;}
 .navlinks a:hover, .navlinks a.active{opacity:1;}

@@ -26,9 +26,13 @@ function renderNav(data) {
     return `<li><a href="${item.href}" class="${activeClass.trim()}">${item.label}</a></li>`;
   }).join('');
 
+  const logoInner = data.business.logo
+    ? `<img src="${data.business.logo}" alt="${data.business.name} logo" class="logo-img">`
+    : `<span class="dot"></span>${data.business.name.toUpperCase().replace(' LLC','')} <span style="font-weight:500; opacity:0.6; font-size:0.85em;">${data.business.shortTag}</span>`;
+
   navRoot.innerHTML = `
     <nav>
-      <a href="index.html" class="logo"><span class="dot"></span>${data.business.name.toUpperCase().replace(' LLC','')} <span style="font-weight:500; opacity:0.6; font-size:0.85em;">${data.business.shortTag}</span></a>
+      <a href="index.html" class="logo">${logoInner}</a>
       <button class="navlinks-mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
       <ul class="navlinks" id="navlinks">
         ${linksHtml}
@@ -50,10 +54,14 @@ function renderFooter(data) {
   const footerRoot = document.getElementById('footer-root');
   if (!footerRoot) return;
 
+  const footerLogoInner = data.business.logo
+    ? `<img src="${data.business.logo}" alt="${data.business.name} logo" class="logo-img">`
+    : `<span class="dot"></span>${data.business.name.toUpperCase()}`;
+
   footerRoot.innerHTML = `
     <footer>
       <div class="wrap">
-        <div class="logo"><span class="dot"></span>${data.business.name.toUpperCase()}</div>
+        <div class="logo">${footerLogoInner}</div>
         <div>Construction &amp; Remodeling · Free estimates on any job, big or small</div>
         <div><a href="${data.business.facebook}" target="_blank" rel="noopener">${data.business.facebookLabel} &#8599;</a></div>
       </div>
