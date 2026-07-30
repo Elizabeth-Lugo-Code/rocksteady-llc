@@ -27,7 +27,7 @@ function renderNav(data) {
   }).join('');
 
   const logoInner = data.business.logo
-    ? `<img src="${data.business.logo}" alt="${data.business.name} logo" class="logo-img">`
+    ? `<img src="${data.business.logo}" alt="${data.business.name} logo" class="logo-img"><span class="logo-text">${data.business.name}</span>`
     : `<span class="dot"></span>${data.business.name.toUpperCase().replace(' LLC','')} <span style="font-weight:500; opacity:0.6; font-size:0.85em;">${data.business.shortTag}</span>`;
 
   navRoot.innerHTML = `
