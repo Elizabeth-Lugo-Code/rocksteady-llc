@@ -10,7 +10,7 @@
 */
 
 async function loadSiteData() {
-  const res = await fetch('data/content.json');
+  const res = await fetch('data/content.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Could not load content.json');
   return res.json();
 }
