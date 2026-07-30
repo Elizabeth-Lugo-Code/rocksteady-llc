@@ -83,7 +83,7 @@ footer .logo-img{
   .navlinks.open{display:flex;}
   .navlinks-mobile-toggle{display:block;}
   .nav-cta{display:none;}
-  .logo-text{display:none;}
+  /*.logo-text{display:none;}*/
 }
 
 /* ---------- HERO ---------- */
